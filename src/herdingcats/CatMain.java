@@ -1,7 +1,5 @@
 package herdingcats;
 
-import java.util.Arrays;
-
 public class CatMain {
 	public static void main(String[] args) {
 		Cat cat1 = new Cat("tony", 15);
