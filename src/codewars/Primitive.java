@@ -13,26 +13,30 @@ import org.junit.Test.None;
  *
  */
 public class Primitive {
-
+	/**
+	 * 确实是从最大的长整型开始判断
+	 * 还需要特别注意临界的条件
+	 * @param number
+	 * @return
+	 */
     public String determineType(String number) {
-    	Long parseNumber = Long.parseLong(number);
+
     	try {
-    		if (parseNumber >= Byte.MIN_VALUE && parseNumber <= Byte.MAX_VALUE) {
-				return "byte";
-			}else if (parseNumber >= Short.MIN_VALUE && parseNumber <= Short.MAX_VALUE) {
-				return "short";
-			}else if (parseNumber >= Integer.MIN_VALUE && parseNumber <= Integer.MAX_VALUE) {
-				return "int";
-			}else if(parseNumber >= Long.MIN_VALUE && parseNumber <= Long.MAX_VALUE){
+    		long parseNumber = Long.parseLong(number);
+    		if (parseNumber > Integer.MAX_VALUE || parseNumber < Integer.MIN_VALUE) {
 				return "long";
+			}else if (parseNumber > Short.MAX_VALUE || parseNumber < Short.MIN_VALUE) {
+				return "int";
+			}else if (parseNumber > Byte.MAX_VALUE || parseNumber < Byte.MIN_VALUE) {
+				return "short";
+			}else {
+				return "byte";
 			}
 			
 		} catch (NumberFormatException e) {
 			// TODO: handle exception
 			return "none";
 		}
-            // determine type...
-    	return "none";
     }
     
     public static void main(String[] args){
