@@ -17,3 +17,10 @@ print(array_diff(array,array1))
 
 for x in array:
 	print(x)
+
+print("xabc".capitalize())
+
+str1 = "adf"
+str1 = str1.capitalize()
+print(str1)
+str1[1ｉｆ如故如果如果] = "a"
