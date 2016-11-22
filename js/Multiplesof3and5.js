@@ -19,12 +19,6 @@ function solution(number){
   }
   var sum = 0;
 
-
-
-
-
-
-
 }
 
 
@@ -41,5 +35,4 @@ function solution(number){
 		}
 	}
 	return sum;
-
 }

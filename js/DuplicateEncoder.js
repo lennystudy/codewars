@@ -13,11 +13,20 @@ function duplicateEncode(word){
     var map = {};
     for(let i=0; i<word.length; i++){
     	if(map.hasOwnProperty(word[i])){
-    		word[i] = ")";
+    		map[word[i]] = map[word[i]] + 1;
     	}else{
     		map[word[i]] = 1;
-
     	}
     }
 
+   	for(let j=0; j<word.length; j++){
+   		if(map[word[j]] > 1){
+   			word[j] = ")";
+   		}else if(map[word[j]] == 1){
+   			word[j] = "(";
+   		}
+   	}
+   	return word;
 }
+
+

@@ -16,7 +16,6 @@ Note that the principal is not taxed but only the year's accrued interest
  */
 function calculateYears(principal, interest, tax, desired) {
     var year = 0;
-    var earn = 0;
     while(principal < desired){
     	year++;
     	principal = principal + (principal * interest) * (1 - tax);
